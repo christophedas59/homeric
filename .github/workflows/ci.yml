@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Godot
@@ -19,23 +19,26 @@ jobs:
           version: 4.6.1
           use-dotnet: false
 
-      - name: Godot Version
+      - name: Verify Godot installation
         run: godot --headless --version
 
-      - name: Import project (headless, no editor UI)
+      # Proper Godot 4 import step (required for UID resolution)
+      - name: Import project (headless)
         env:
           GODOT_DISABLE_LEAK_CHECKS: "1"
-        run: godot --headless --quit --path .
+        run: godot --headless --import --path .
 
+      # Run GUT tests if addon exists
       - name: Run GUT tests (headless)
         env:
           GODOT_DISABLE_LEAK_CHECKS: "1"
         run: |
           if [ -d "addons/gut" ]; then
+            echo "Running GUT tests..."
             godot --headless -s addons/gut/gut_cmdln.gd \
               -gdir=res://tests \
               -ginclude_subdirs \
               -gexit
           else
-            echo "GUT not installed yet, skipping tests."
+            echo "GUT not installed, skipping tests."
           fi
