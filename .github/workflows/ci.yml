@@ -22,10 +22,10 @@ jobs:
       - name: Godot Version
         run: godot --headless --version
 
-      - name: Import project (headless)
+      - name: Import project (headless, no editor UI)
         env:
           GODOT_DISABLE_LEAK_CHECKS: "1"
-        run: godot --headless --editor --quit --path .
+        run: godot --headless --quit --path .
 
       - name: Run GUT tests (headless)
         env:
