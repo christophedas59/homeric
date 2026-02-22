@@ -1,3 +1,24 @@
 [gd_scene format=3 uid="uid://dgmxxftk7kcrk"]
 
+[ext_resource type="SpriteFrames" uid="uid://e2f70efh8o4b" path="res://assets/sprites/characters/wizard_male/wizard_male.tres" id="1_o5qli"]
+[ext_resource type="SpriteFrames" uid="uid://de5dmx3exls4w" path="res://assets/sprites/effects/effects.tres" id="2_sugp2"]
+[ext_resource type="SpriteFrames" uid="uid://chd40qyu2mgj3" path="res://assets/sprites/characters/zombie/zombie_frames.tres" id="3_jyhfs"]
+
 [node name="Main" type="Node2D" unique_id=548021761]
+
+[node name="AnimatedSpriteWizard" type="AnimatedSprite2D" parent="." unique_id=1010155762]
+position = Vector2(153, 59)
+sprite_frames = ExtResource("1_o5qli")
+animation = &"idle_up"
+
+[node name="AnimatedSpriteFX" type="AnimatedSprite2D" parent="." unique_id=206566447]
+sprite_frames = ExtResource("2_sugp2")
+animation = &"forebolt_zone"
+frame = 7
+frame_progress = 1.0
+
+[node name="AnimatedSpriteZombie" type="AnimatedSprite2D" parent="." unique_id=1371964450]
+position = Vector2(72, 47)
+sprite_frames = ExtResource("3_jyhfs")
+animation = &"idle_up"
+frame_progress = 0.7913917
