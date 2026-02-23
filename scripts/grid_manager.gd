@@ -42,7 +42,7 @@ func remove_actor(actor: Node) -> void:
 func try_move(actor: Node, to_cell: Vector2i) -> bool:
 	if not is_walkable(to_cell) or is_occupied(to_cell):
 		return false
-	var from_cell := _find_actor_cell(actor)
+	var from_cell: Variant = _find_actor_cell(actor)
 	if from_cell == null:
 		return false
 	occupant_map.erase(from_cell)
@@ -62,7 +62,7 @@ func reserve_move(actor: Node, to_cell: Vector2i) -> bool:
 func commit_reserved_moves() -> void:
 	for to_cell: Vector2i in _reservation_map.keys():
 		var actor: Node = _reservation_map[to_cell]
-		var from_cell := _find_actor_cell(actor)
+		var from_cell: Variant = _find_actor_cell(actor)
 		if from_cell == null:
 			continue
 		if occupant_map.has(to_cell):
