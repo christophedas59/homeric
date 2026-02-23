@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://blmt8rymkk405"]
+[gd_scene load_steps=6 format=3 uid="uid://blmt8rymkk405"]
+
+[ext_resource type="Script" path="res://scripts/grid_manager.gd" id="1_4qtxk"]
+[ext_resource type="Script" path="res://scripts/actor.gd" id="2_exul2"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/characters/wizard_male/wizard_male.tres" id="3_mxwbm"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/characters/zombie/zombie_frames.tres" id="4_h8k2d"]
 
 [node name="Main" type="Node2D" unique_id=1185946160]
+
+[node name="GridManager" type="Node" parent="."]
+script = ExtResource("1_4qtxk")
+
+[node name="Wizard" type="AnimatedSprite2D" parent="."]
+script = ExtResource("2_exul2")
+sprite_frames = ExtResource("3_mxwbm")
+cell = Vector2i(3, 3)
+target_path = NodePath("../Zombie")
+grid_manager_path = NodePath("../GridManager")
+
+[node name="Zombie" type="AnimatedSprite2D" parent="."]
+script = ExtResource("2_exul2")
+sprite_frames = ExtResource("4_h8k2d")
+cell = Vector2i(16, 7)
+target_path = NodePath("../Wizard")
+grid_manager_path = NodePath("../GridManager")
