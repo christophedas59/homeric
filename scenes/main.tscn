@@ -6,22 +6,6 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_qpd16")
 
-<<<<<<< HEAD
-[node name="AnimatedSpriteWizard" type="AnimatedSprite2D" parent="." unique_id=1010155762]
-position = Vector2(153, 59)
-sprite_frames = ExtResource("1_o5qli")
-animation = &"cast_action_down"
-
-[node name="AnimatedSpriteFX" type="AnimatedSprite2D" parent="." unique_id=206566447]
-position = Vector2(335, 82)
-sprite_frames = ExtResource("2_sugp2")
-animation = &"firebolt"
-
-[node name="AnimatedSpriteZombie" type="AnimatedSprite2D" parent="." unique_id=1371964450]
-position = Vector2(1013, 147)
-sprite_frames = ExtResource("3_jyhfs")
-animation = &"death"
-=======
 [node name="GridManager" type="Node" parent="."]
 script = ExtResource("2_ak2hs")
 grid_size = Vector2i(20, 12)
@@ -30,4 +14,3 @@ cell_size = 64
 [node name="Units" type="Node2D" parent="."]
 
 [node name="FX" type="Node2D" parent="."]
->>>>>>> 54e0cf383d9407f9cb34048837b228284aa4791d
