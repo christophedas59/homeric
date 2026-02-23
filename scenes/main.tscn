@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://blmt8rymkk405"]
 
+[ext_resource type="SpriteFrames" uid="uid://e2f70efh8o4b" path="res://assets/sprites/characters/wizard_male/wizard_male.tres" id="1_sugp2"]
+[ext_resource type="SpriteFrames" uid="uid://chd40qyu2mgj3" path="res://assets/sprites/characters/zombie/zombie_frames.tres" id="2_jyhfs"]
+[ext_resource type="SpriteFrames" uid="uid://de5dmx3exls4w" path="res://assets/sprites/effects/effects.tres" id="3_tbgi4"]
+
 [node name="Main" type="Node2D" unique_id=1185946160]
+
+[node name="wizard" type="AnimatedSprite2D" parent="." unique_id=1159838828]
+position = Vector2(143, 334)
+sprite_frames = ExtResource("1_sugp2")
+animation = &"cast_action_down"
+
+[node name="zombie" type="AnimatedSprite2D" parent="." unique_id=1640795668]
+position = Vector2(1120, 330)
+sprite_frames = ExtResource("2_jyhfs")
+animation = &"death"
+
+[node name="effects" type="AnimatedSprite2D" parent="." unique_id=856728574]
+position = Vector2(447, 342)
+sprite_frames = ExtResource("3_tbgi4")
+animation = &"arcane_missile_2"
