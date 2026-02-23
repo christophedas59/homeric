@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/units/wizard.gd" id="1_7u2ce"]
+[ext_resource type="SpriteFrames" uid="uid://e2f70efh8o4b" path="res://assets/sprites/characters/wizard_male/wizard_male.tres" id="2_yu1xd"]
+
+[node name="Wizard" type="Node2D"]
+script = ExtResource("1_7u2ce")
+team = "player"
+max_hp = 18
+move_interval = 0.25
+attack_cooldown = 0.9
+cast_windup = 0.35
+recovery_time = 0.2
+base_attack_range = 5
+base_damage = 2
+base_projectile_animation = &"arcane_missile_2"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_yu1xd")
+animation = &"idle_down"
